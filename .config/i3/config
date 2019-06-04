@@ -186,7 +186,7 @@ bindsym --release $mod+Shift+x exec i3lock && systemctl suspend
 bindsym $mod+Shift+d exec --no-startup-id rofi -monitor -1 -show window
 
 # Set wallpaper with feh
-exec --no-startup-id feh --bg-scale /home/aleksandar/Pictures/wall.jpg
+exec --no-startup-id feh --bg-scale /home/aleksandar/.wallpapers/1.jpg
 
 ## Screenshots
 

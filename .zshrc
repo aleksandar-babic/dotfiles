@@ -1,3 +1,5 @@
+#setopt SOURCE_TRACE
+
 ### ZSH
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.yarn/bin:$PATH
 export ZSH=$HOME/.oh-my-zsh
@@ -5,10 +7,6 @@ export UPDATE_ZSH_DAYS=14
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="mm/dd/yyyy"
-plugins=(git)
-
-### Oh-my-zsh
-source $ZSH/oh-my-zsh.sh
 
 ### NVM
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
@@ -16,7 +14,6 @@ source $ZSH/oh-my-zsh.sh
 ### Antigen
 
 # Load antigen
-autoload antigen
 source ~/antigen.zsh
 
 # Load the oh-my-zsh's library.
@@ -43,10 +40,12 @@ antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Theme
-POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
-POWERLEVEL9K_MODE="nerdfont-complete"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh context dir vcs)
-antigen theme bhilburn/powerlevel9k powerlevel9k
+#POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
+#POWERLEVEL9K_MODE="nerdfont-complete"
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh context dir vcs)
+#antigen theme bhilburn/powerlevel9k powerlevel9k
+
+antigen theme https://gitlab.theedgeofrage.com/TheEdgeOfRage/boban-zsh
 
 # Tell antigen that you're done.
 antigen apply
@@ -72,6 +71,7 @@ alias .5='cd ../../../../..'
 alias i3-conf='vim $HOME/.config/i3/config'
 alias i3-dual='exec xrandr --output eDP1 --auto --output HDMI1 --auto --left-of eDP1'
 alias i3-dual-right='exec xrandr --output eDP1 --auto --output HDMI1 --auto --right-of eDP1'
+alias i3-reset="exec xrandr --output eDP1 --auto"
 
 # Docker aliases
 alias dcu="docker-compose up"
