@@ -1,7 +1,9 @@
 #setopt SOURCE_TRACE
 
 ### ZSH
-export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.yarn/bin:$PATH
+export GOPATH=$HOME/go
+export GOBIN=$HOME/go/bin
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.yarn/bin:$HOME/.local/bin:$GOBIN:$HOME/.gem/ruby/2.7.0/bin:$PATH
 export ZSH=$HOME/.oh-my-zsh
 export UPDATE_ZSH_DAYS=14
 ENABLE_CORRECTION="true"
@@ -10,6 +12,9 @@ HIST_STAMPS="mm/dd/yyyy"
 
 ### NVM
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
+
+### PYENV
+eval "$(pyenv init -)"
 
 ### Antigen
 
@@ -110,3 +115,25 @@ alias json='python -m json.tool'
 alias rsync-a='rsync -alPvz'
 alias cat='bat --paging never --style=plain'
 
+
+alias yt-dl="youtube-dl -x --embed-thumbnail --add-metadata --audio-format mp3 --audio-quality 0"
+alias sstop='sudo systemctl stop'
+alias sstart='sudo systemctl start'
+alias srestart='sudo systemctl restart'
+alias gs='git status'
+alias gch='git checkout'
+alias gps='git push'
+alias gpl='git pull'
+alias ga='git add'
+alias gc='git commit -m'
+
+# K8s
+alias k='kubectl'
+alias kctg='kubectl get'
+alias kctd='kubectl describe'
+alias kctdel='kubectl delete'
+alias kctl='kubectl logs -f'
+
+# Clooes
+alias cl-db-ssh='ssh i-007148e4f81c51f58'
+alias cl-db-proxy='ssh i-007148e4f81c51f58 -L 27117:localhost:27017'
